@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const newUserModel = require("../models/newUserModel");
 const userModel = require("../models/userModel");
 
 /*
@@ -91,6 +92,8 @@ const updateUser = async function (req, res) {
   let updatedUser = await userModel.findOneAndUpdate({ _id: userId }, userData);
   res.send({ status: updatedUser, data: updatedUser });
 };
+
+
 
 module.exports.createUser = createUser;
 module.exports.getUserData = getUserData;
